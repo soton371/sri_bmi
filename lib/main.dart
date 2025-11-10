@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        title: "Sha BMI Calculator",
         theme: ThemeData(
           primarySwatch: Colors.blue,
           useMaterial3: true,

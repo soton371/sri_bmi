@@ -1,4 +1,4 @@
-package com.ekramulhaque.sri_bmi
+package com.shajibulhasam.shabmicalculator
 
 import io.flutter.embedding.android.FlutterActivity
 
