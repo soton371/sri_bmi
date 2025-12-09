@@ -38,7 +38,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            "assets/images/onBoarding.png",
+            "assets/images/applogo.png",
             height: 205.h,
           ),
           SizedBox(
@@ -56,7 +56,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               style: DefaultTextStyle.of(context).style,
               children: <TextSpan>[
                 TextSpan(
-                  text: 'Healthy',
+                  text: 'SHA',
                   style: TextStyle(
                     color: AppColors.blueColor,
                     decoration: TextDecoration.none,
@@ -65,7 +65,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: 'Hub',
+                  text: 'BMI',
                   style: TextStyle(
                     color: AppColors.redColor,
                     decoration: TextDecoration.none,
@@ -79,48 +79,34 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           SizedBox(
             height: 60.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20.w, right: 20.w),
-            child: Text(
-              "Monitor your BMI weekly for proactive health maintenance, as recommended by healthcare professionals.",
-              style: TextStyle(
-                color: Colors.black,
-                decoration: TextDecoration.none,
-                fontSize: ScreenUtil().setSp(26.0),
-                fontFamily: 'RubikRegular',
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(
-            height: 60.h,
-          ),
-          AnimatedOpacity(
-            opacity: isVisible ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: 1000),
-            child: ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(AppColors.blueColor),
-                  minimumSize: MaterialStatePropertyAll(
-                    Size(300, 55),
-                  ),
-                  shape: MaterialStatePropertyAll(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+          Center(
+            child: AnimatedOpacity(
+              opacity: isVisible ? 1.0 : 0.0,
+              duration: const Duration(milliseconds: 1000),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll(AppColors.blueColor),
+                    minimumSize: MaterialStatePropertyAll(
+                      Size(300, 55),
                     ),
-                  )),
-              onPressed: () async {
-                final prefs = await SharedPreferences.getInstance();
-                prefs.setBool('showHome', true);
-                Get.offAll(() => Homepage());
-              },
-              child: Text(
-                "Get Started",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: ScreenUtil().setSp(26.0),
-                  fontFamily: 'RubikBold',
+                    shape: MaterialStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    )),
+                onPressed: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  prefs.setBool('showHome', true);
+                  Get.offAll(() => Homepage());
+                },
+                child: Text(
+                  "Get Started",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: ScreenUtil().setSp(26.0),
+                    fontFamily: 'RubikBold',
+                  ),
                 ),
               ),
             ),

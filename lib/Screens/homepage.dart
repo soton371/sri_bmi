@@ -178,7 +178,7 @@ class _HomepageState extends State<Homepage> {
                   style: DefaultTextStyle.of(context).style,
                   children: <TextSpan>[
                     TextSpan(
-                      text: 'Healthy',
+                      text: 'SHA',
                       style: TextStyle(
                         color: AppColors.blueColor,
                         decoration: TextDecoration.none,
@@ -187,7 +187,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     TextSpan(
-                      text: 'Hub',
+                      text: 'BMI',
                       style: TextStyle(
                         color: AppColors.redColor,
                         decoration: TextDecoration.none,
